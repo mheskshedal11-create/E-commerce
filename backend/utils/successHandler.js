@@ -1,9 +1,18 @@
 class SuccessHandler {
-    constructor(statusCode = 200, data = null, message = "Success") {
+    constructor(data = null, message = "Success", statusCode = 200) {
         this.statusCode = statusCode;
-        this.data = data;
-        this.message = message;
         this.success = statusCode < 400;
+        this.message = message;
+        this.data = data;
+    }
+
+    // Send success response
+    send(res) {
+        return res.status(this.statusCode).json({
+            success: this.success,
+            message: this.message,
+            data: this.data || null,
+        });
     }
 }
 

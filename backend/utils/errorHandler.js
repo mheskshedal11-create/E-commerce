@@ -1,9 +1,7 @@
 class ErrorHandler extends Error {
-    constructor(message, statusCode, errors = [], stack) {
+    constructor(message, statusCode = 500, errors = [], stack) {
         super(message);
-
         this.statusCode = statusCode;
-        this.data = null;
         this.success = false;
         this.errors = errors;
 
@@ -12,6 +10,15 @@ class ErrorHandler extends Error {
         } else {
             Error.captureStackTrace(this, this.constructor);
         }
+    }
+
+    // Send error response
+    send(res) {
+        return res.status(this.statusCode).json({
+            success: this.success,
+            message: this.message,
+            errors: this.errors || null,
+        });
     }
 }
 
