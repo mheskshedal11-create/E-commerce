@@ -1,0 +1,100 @@
+ecommerce-backend/
+│
+├── src/
+│   ├── config/                        # Configuration
+│   │   ├── db.js                      # MongoDB connection
+│   │   ├── env.js                     # Environment variables
+│   │   ├── logger.js                  # Logging setup
+│   │   └── cloudStorage.js            # e.g., AWS S3 / Cloudinary
+│   │
+│   ├── controllers/                   # Handles request/response
+│   │   ├── auth.controller.js
+│   │   ├── user.controller.js
+│   │   ├── product.controller.js
+│   │   ├── category.controller.js
+│   │   ├── order.controller.js
+│   │   ├── cart.controller.js
+│   │   ├── wishlist.controller.js
+│   │   ├── coupon.controller.js
+│   │   ├── review.controller.js
+│   │   ├── payment.controller.js
+│   │   ├── shipping.controller.js
+│   │   └── admin.controller.js
+│   │
+│   ├── routes/
+│   │   ├── v1/
+│   │   │   ├── auth.routes.js
+│   │   │   ├── user.routes.js
+│   │   │   ├── product.routes.js
+│   │   │   ├── category.routes.js
+│   │   │   ├── order.routes.js
+│   │   │   ├── cart.routes.js
+│   │   │   ├── wishlist.routes.js
+│   │   │   ├── coupon.routes.js
+│   │   │   ├── review.routes.js
+│   │   │   ├── payment.routes.js
+│   │   │   ├── shipping.routes.js
+│   │   │   └── admin.routes.js
+│   │
+│   ├── models/                        # MongoDB schemas
+│   │   ├── user.model.js
+│   │   ├── product.model.js
+│   │   ├── category.model.js
+│   │   ├── order.model.js
+│   │   ├── cart.model.js
+│   │   ├── wishlist.model.js
+│   │   ├── coupon.model.js
+│   │   ├── review.model.js
+│   │   ├── payment.model.js
+│   │   └── shipping.model.js
+│   │
+│   ├── services/                      # Business logic
+│   │   ├── auth.service.js
+│   │   ├── user.service.js
+│   │   ├── product.service.js
+│   │   ├── category.service.js
+│   │   ├── order.service.js
+│   │   ├── cart.service.js
+│   │   ├── wishlist.service.js
+│   │   ├── coupon.service.js
+│   │   ├── review.service.js
+│   │   ├── payment.service.js
+│   │   ├── shipping.service.js
+│   │   └── admin.service.js
+│   │
+│   ├── middleware/                     # Express middleware
+│   │   ├── auth.middleware.js
+│   │   ├── error.middleware.js
+│   │   ├── validate.middleware.js
+│   │   └── rateLimit.middleware.js
+│   │
+│   ├── utils/                          # Helper functions
+│   │   ├── apiFeatures.js              # Filtering, sorting, pagination
+│   │   ├── errorHandler.js
+│   │   ├── logger.js
+│   │   └── token.js                    # JWT token helpers
+│   │
+│   ├── jobs/                           # Background jobs
+│   │   ├── emailJob.js                 # Emails (order confirmation, OTP)
+│   │   └── notificationJob.js          # Push/Email notifications
+│   │
+│   ├── events/                         # Event-driven architecture
+│   │   └── orderEvents.js
+│   │
+│   ├── uploads/                         # File uploads (images)
+│   │
+│   └── analytics/                      # Admin analytics & dashboard
+│       ├── sales.analytics.js
+│       └── user.analytics.js
+│
+├── tests/                               # Unit & integration tests
+│   ├── controllers/
+│   ├── routes/
+│   ├── services/
+│   └── models/
+│
+├── .env                                  # Environment variables
+├── server.js                              # App entry point
+├── package.json
+├── package-lock.json
+└── README.md
