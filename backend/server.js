@@ -9,6 +9,7 @@ import { globalErrorHandler } from './middleware/errorMIddleware.js'
 import adminRouter from './router/admin.router.js'
 import userRouter from './router/user.router.js'
 import categoryRouter from './router/category.controller.js'
+import productRouer from './router/product.router.js'
 
 
 const app = express()
@@ -31,6 +32,7 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/admin', adminRouter)
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/category', categoryRouter)
+app.use('/api/v1/product', productRouer)
 
 app.listen(PORT, () => {
     console.log(`server is running http://localhost:${PORT}`)
