@@ -10,6 +10,7 @@ import adminRouter from './router/admin.router.js'
 import userRouter from './router/user.router.js'
 import categoryRouter from './router/category.controller.js'
 import productRouer from './router/product.router.js'
+import orderRouter from './router/order.router.js'
 
 
 const app = express()
@@ -33,6 +34,7 @@ app.use('/api/v1/admin', adminRouter)
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/category', categoryRouter)
 app.use('/api/v1/product', productRouer)
+app.use('/api/v1/order', orderRouter)
 
 app.listen(PORT, () => {
     console.log(`server is running http://localhost:${PORT}`)
